@@ -30,7 +30,7 @@ class AdminController extends Controller
 
     public function retraitall()
     {
-
+        
     }
 
     public function pouvoir()

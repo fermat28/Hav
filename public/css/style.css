@@ -1,0 +1,443 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Century Gothic;
+}
+
+p{
+   font-weight: 300;
+   color: #fff;
+}
+
+section{
+   display: flex;
+   scroll-snap-align: start;
+}
+
+.banner{
+   position: relative;
+   width: 100%;
+   min-height: 110vh;
+   /*max-height: fit-content;*/
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url(img/bg.png);
+   background-size: cover;
+}
+
+.banner .content{
+   max-width: 100%;
+   text-align: center;
+   z-index: 1000;
+   margin-bottom: 150px;
+   
+}
+
+.banner .content h2{
+   font-size: 4em;
+   color: #fff;
+}
+
+.banner .content p{
+   font-size: 1em;
+   color: white;
+}
+
+.btn{
+   font-size: 1em;
+   color: white;
+   background-color: #ff0157;
+   display: inline-block;
+   padding: 10px 30px;
+   margin-top: 20px;
+   text-transform: uppercase;
+   text-decoration: none;
+   transition: 0.3s ease-in-out;
+   border-radius: 10px;
+   font-weight: 550;
+}
+
+.btn:hover{
+   letter-spacing: 3px;
+
+}
+
+.btn:focus{
+   background-color: green;
+}
+
+.content .span{
+   font-size: 1.5em;
+   color: green;
+   text-shadow: 0 0 4px #fff, 0 0 4px #fff;
+}
+
+#logo{
+   width: 110px;
+   height: auto;
+   position: fixed;
+   top: 8%;
+   left: 10%;
+   transform: translate(-50%,-50%);
+   padding: 10px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#user{
+   width: 50px;
+   height: auto;
+   position: fixed;
+   top: 6%;
+   left: 93%;
+   border-radius: 50%;
+   transform: translate(-50%,-50%);
+   padding: 10px;
+   /*background-color: #1b1a1a;*/
+   background: linear-gradient(-150deg,#cf5c5c,#c19b4a,#def2a0,#e67e22,#34495e,#42eca6,#64b3d9,#208ea2,#498ada,#f1c40f,#5b73df,#897ed3,#cf5c5c,#c19b4a);
+	animation: couleur 15s linear infinite backwards;
+	background-size: 100% 2000%;
+   border: 2px solid white;
+   transition: 0.2s ease-in-out;
+}
+
+@keyframes couleur{
+	0%{
+		background-position: 0% 0%;
+	}
+	50%{
+		background-position: 0% 50%;
+
+	}
+	100%{
+		background-position: 0% 100%;
+
+	}
+}
+
+#user:hover{
+   width: 45px;
+   cursor: pointer;
+}
+
+#user:active{
+   width: 60px;
+   
+}
+
+#context-menu{
+   position: absolute;
+   top: 14%;
+   left: 93%;
+   transform: translate(-50%,-50%);
+	z-index: 10000;
+   width: 130px;
+   height: 60px;
+	text-align: center;
+	background: #1b1a1a;
+	border-radius: 8px;
+	box-shadow: 0px 5px 13px rgba(0,0,0,1);
+	border: 1px solid black;
+	transform-origin: left;
+   padding: 6px;
+   visibility: hidden;
+	opacity: 0;
+   z-index: 1000;
+	overflow: hidden;
+}
+
+#context-menu.active{
+   top: 14%;
+	visibility: visible;
+	opacity: 1;
+}
+
+#context-menu::after{
+   content: "";
+   position: absolute;
+   top: 0%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: #000 transparent transparent transparent;
+}
+
+#context-menu .item{
+   padding: 5px;
+   margin-top: 2px; 
+	font-size: 10px;
+	color: #fff;
+	cursor: pointer;
+	border-radius: inherit;
+   transition: 0.2s ease-in-out;
+   text-decoration: none;
+
+}
+
+#context-menu .item:hover{
+	background: #343434;
+}
+
+.secondeSection{
+   position: relative;
+   width: 90%;
+   min-height: 450px;
+   /*max-height: fit-content;*/
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: 0.5s ease-in-out;
+   background-size: cover;
+   margin-right: 10px;
+}
+
+.secondeSection h3{
+   color: white;
+   font-size: 20px;
+   position: absolute;
+   top: 10%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+
+.card{
+   display: grid;
+   grid-template-columns: 250px;
+   grid-template-rows: 150px 10px 80px;
+   grid-template-areas: "image" "text" "stats";
+   border-radius: 10px;
+   background: #111;
+   /*box-shadow: 5px 5px 15px rgba(0,0,0,0.9);*/
+   text-align: center;
+   padding: 2px;
+   transition: 0.5s ease-in-out;
+   margin-left: 10px;
+   cursor: pointer;
+}
+
+.card:hover{
+   transform: scale(0.9);
+   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+
+.card-image1{
+   grid-area: image;
+   background: url(img/1.jpg);
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   background-size: cover;
+
+}
+
+.card-image2{
+   grid-area: image;
+   background: url(img/2.jpg);
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   background-size: cover;
+
+}
+
+.card-image3{
+   grid-area: image;
+   background: url(img/3.jpg);
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   background-size: cover;
+
+}
+
+.card-text{
+   grid-area: text;
+   margin: 25px;
+
+}
+
+.card-text .date{
+   color: rgb(255,7,110);
+   font-size: 13px;
+}
+
+.card-text p{
+   color:grey;
+   font-size: 15px;
+   font-weight: 300;
+}
+
+.card-text h2{
+   margin-top: 0px;
+   font-size: 28px;
+}
+
+.card-stats{
+   grid-area: stats;
+   color: white;
+}
+
+#connec{
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 550px;
+	box-shadow: 0px 5px 13px rgba(0,0,0,1);
+	background-size: cover;
+	background-position: center;
+	background-color: #ff0154;
+	background-image: linear-gradient(rgba(0,0.8,0,0.1),rgba(0,0,0,0.2)), url(img/bg2.jpg);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.6s ease-in-out;
+	transition-timing-function: cubic-bezier(9.0, 1.0, 3.0, 0.9);
+	border-radius: 10px;
+	overflow: hidden;
+	border: 2px solid white;
+}
+#connec.active{
+	top: 45%;
+	visibility: visible;
+	opacity: 1;
+	border-bottom-color: 2px solid #ff0157;
+}
+#connec .close{
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 30px;
+	margin-left: 290px;
+	transition: 0.85s;
+	padding: 0 5px;
+	color: black;
+}
+#connec .close:hover{
+	font-size: 35px;
+	transform: scale(1.25);
+}
+#connec .close:active{
+	transform: translateX(-3px);
+	color: #ff0157;
+	transform: scale(-1.25);
+
+}
+
+#connec h2{
+	font-size: 22px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	color: black;
+	
+}
+
+#connec p{
+	color: black;
+	font-size: 10px;
+
+}
+#connec .formConnec .oubli a{
+	font-style: italic;
+	font-size: 10px;
+	color: black;
+	text-decoration: none;
+}
+#connec .formConnec .oubli a:hover{
+	color: #000;
+	font-weight: bold;
+	text-decoration: underline;
+}
+#connec form #formConnec{
+	margin-bottom: 5px;
+	margin-top: 35px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+#connec .formConnec #connecform .pseudo input{
+	margin-bottom: 5px;
+	margin-top: 150px;
+	width: 280px;
+	height: 35px;
+	font-size: 17px;
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	border: none;
+	transition: 0.3s ease-in;
+}
+#connec .formConnec #connecform .mdp input{
+	width: 280px;
+	height: 35px;
+	margin-top: 5px;
+	font-size: 17px;
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: center;
+	border: none;
+	margin-bottom: 25px;
+	transition: 0.3s ease-in;
+}
+#connec .formConnec #connecform .mdp input:focus, 
+#connec .formConnec #connecform .pseudo input:focus{
+	width: 300px;
+	border: 2px solid #ff0157;
+	height: 40px;
+}
+
+#connec .formConnec #connecform .btnconnec button{
+	font-size: 10px;
+	color: #000;
+	background: #ff0157;
+	display: inline-block;
+	padding: 10px 30px;
+	margin-top: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 1px;
+	transition: 0.5s;
+	font-weight: 300;
+	border-radius: 10px;
+	cursor: default;
+	transition: 0.5s ease-in;
+	border: none;
+}
+#connec .formConnec #connecform .btnconnec button:hover{
+	cursor: pointer;
+	letter-spacing: 3px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+#connec .formConnec #connecform .btnconnec button:focus{
+	filter: blur(2px);
+	background: #fff;
+	transform: scale(2);
+}
+
+#connec .formConnec #connecform .nouveau{
+   margin-top: 10px;
+   font-size: 15px;
+}
+
+::placeholder{
+	font-style: italic;
+	font-size: 11px;
+	text-align: center;
+	font-weight: 200;	
+	margin: auto;
+}
+
+.container#blur.active{
+	filter: brightness(0.7);
+	transition: 0.3s ease-in-out;
+	pointer-events: none;
+	user-select: none;
+	background-color: black;
+}
